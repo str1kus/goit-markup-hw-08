@@ -5,21 +5,9 @@
 .team {
   @extend %list;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   gap: 30px;
-
-  @include mq(tab) {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-  }
-
-  @include mq(desk) {
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
 }
 
 .team__card {
@@ -52,18 +40,8 @@
 .team__icons {
   @extend %list;
   display: flex;
-  margin-left: 122px;
-  margin-right: 122px;
+  justify-content: center;
   gap: 10px;
-
-  @include mq(tab) {
-    margin-left: 74px;
-    margin-right: 74px;
-  }
-  @include mq(desk) {
-    margin-left: 32px;
-    margin-right: 32px;
-  }
 }
 
 .team__link {

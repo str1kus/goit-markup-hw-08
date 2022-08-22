@@ -7,8 +7,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 370px;
   gap: 8px;
+
+  @include mq(mob-only) {
+    max-width: 370px;
+  }
 
   @include mq(tab) {
     flex-wrap: nowrap;

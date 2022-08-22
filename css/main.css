@@ -119,13 +119,11 @@ button {
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
-  overflow: hidden;
 }
 @media screen and (min-width: 1200px) {
   .section {
     padding-top: 94px;
     padding-bottom: 94px;
-    overflow: hidden;
   }
 }
 
@@ -446,16 +444,13 @@ button {
   gap: 30px;
 }
 
-.product__list {
-  width: 450px;
-}
 @media screen and (min-width: 768px) {
-  .product__list {
+  .product__item {
     width: 354px;
   }
 }
 @media screen and (min-width: 1200px) {
-  .product__list {
+  .product__item {
     width: 370px;
   }
 }
@@ -463,13 +458,12 @@ button {
 .product__card {
   position: relative;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
 }
 
 .product__link {
   display: flex;
   flex-direction: column;
+  height: 100%;
   text-decoration: none;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -484,22 +478,24 @@ button {
   bottom: 0;
   width: 100%;
   height: 100%;
+  padding: 77px 24px;
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.product__list:hover .product__overlay {
-  transform: translateY(0);
+@media screen and (min-width: 768px) {
+  .product__overlay {
+    padding: 49px 24px 77px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .product__overlay {
+    padding: 63px 24px;
+  }
 }
 
-.product__textwrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 322px;
-  height: 168px;
+.product__item:hover .product__overlay {
+  transform: translateY(0);
 }
 
 .product__text {
@@ -511,6 +507,7 @@ button {
 }
 
 .product-wrapper {
+  flex-grow: 1;
   padding: 20px 24px;
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
@@ -534,8 +531,12 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 370px;
   gap: 8px;
+}
+@media screen and (max-width: 767.98px) {
+  .filter {
+    max-width: 370px;
+  }
 }
 @media screen and (min-width: 768px) {
   .filter {
@@ -884,17 +885,33 @@ button {
 }
 
 .nav-contacts__icon--envelope {
-  width: 16px;
-  height: 12px;
-  margin-right: 10px;
+  width: 14px;
+  height: 10px;
+  margin-right: 8px;
   fill: currentColor;
+}
+@media screen and (min-width: 1200px) {
+  .nav-contacts__icon--envelope {
+    width: 16px;
+    height: 12px;
+    margin-right: 10px;
+    fill: currentColor;
+  }
 }
 
 .nav-contacts__icon--smartphone {
   width: 10px;
-  height: 16px;
-  margin-right: 10px;
+  height: 14px;
+  margin-right: 8px;
   fill: currentColor;
+}
+@media screen and (min-width: 1200px) {
+  .nav-contacts__icon--smartphone {
+    width: 10px;
+    height: 16px;
+    margin-right: 10px;
+    fill: currentColor;
+  }
 }
 
 .hero {
@@ -1115,23 +1132,9 @@ button {
 
 .team {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   gap: 30px;
-}
-@media screen and (min-width: 768px) {
-  .team {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .team {
-    flex-direction: row;
-    flex-wrap: nowrap;
-  }
 }
 
 .team__card {
@@ -1162,21 +1165,8 @@ button {
 
 .team__icons {
   display: flex;
-  margin-left: 122px;
-  margin-right: 122px;
+  justify-content: center;
   gap: 10px;
-}
-@media screen and (min-width: 768px) {
-  .team__icons {
-    margin-left: 74px;
-    margin-right: 74px;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .team__icons {
-    margin-left: 32px;
-    margin-right: 32px;
-  }
 }
 
 .team__link {

@@ -2,12 +2,10 @@
   #{$selector} {
     padding-top: 60px;
     padding-bottom: 60px;
-    overflow: hidden;
 
     @include mq(desk) {
       padding-top: 94px;
       padding-bottom: 94px;
-      overflow: hidden;
     }
   }
 }
