@@ -13,10 +13,22 @@
   background-position: center;
   background-size: cover;
 
+  @media screen and (min-devie-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+    background-image: url('../images/hero/image01-480w480@2x.jpg');
+  }
+
   @include mq(tab) {
     max-width: 768px;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url('../images/hero/image01-768w768.jpg');
+
+    @media screen and (min-devie-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/hero/image01-768w768@2x.jpg');
+    }
   }
 
   @include mq(desk) {
@@ -24,16 +36,12 @@
     padding: 200px 0;
     background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
       url('../images/hero/image01-1600w1600.jpg');
-  }
-}
 
-@media screen and (min-devie-pixel-ratio: 2),
-  screen and (min-resolution: 192dpi),
-  screen and (min-resolution: 2dppx) {
-  .hero__overlay {
-    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
-      url('../images/hero/image01-480w480@2x.jpg'), url('../images/hero/image01-768w768@2x.jpg'),
-      url('../images/hero/image01-1600w1600@2x.jpg');
+    @media screen and (min-devie-pixel-ratio: 2),
+      screen and (min-resolution: 192dpi),
+      screen and (min-resolution: 2dppx) {
+      background-image: url('../images/hero/image01-1600w1600@2x.jpg');
+    }
   }
 }
 
