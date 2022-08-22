@@ -1,0 +1,174 @@
+.footer {
+  background-color: $bgColorSecondary;
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.footer-inside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq(tab) {
+  }
+
+  @include mq(desk) {
+    flex-direction: row;
+    align-items: baseline;
+  }
+}
+
+.footer-inside__contact-media {
+  @include mq(tab) {
+    display: flex;
+    margin-left: 76px;
+    margin-right: 89px;
+    margin-bottom: 60px;
+    align-items: baseline;
+  }
+  @include mq(desk) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+}
+
+.footer-inside__contacts {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 60px;
+
+  @include mq(tab) {
+    margin-right: 165px;
+    margin-bottom: 0;
+  }
+
+  @include mq(desk) {
+    margin-right: 70px;
+    margin-bottom: 0;
+  }
+}
+
+.footer-logo {
+  display: block;
+  margin-right: 0;
+  margin-bottom: 20px;
+  color: $whiteColorPrimary;
+}
+
+.logo__light {
+  color: $accentColor;
+}
+
+.footer-contacts {
+  @extend %list;
+  min-width: 231px;
+}
+
+.footer-contacts__item {
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+}
+
+.footer-contacts__address {
+  display: block;
+  line-height: 1.5;
+  color: $whiteColorPrimary;
+  text-decoration: none;
+  transition: color 250ms $timingFunction;
+}
+
+.footer-contacts__address {
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+}
+
+.footer-contacts__link {
+  display: block;
+  line-height: 1.5;
+  color: $colorFooterContacts;
+  text-decoration: none;
+  transition: color 250ms $timingFunction;
+}
+
+.footer-contacts__link {
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+}
+
+.footer__media {
+  min-width: 206px;
+
+  @include mq(tab) {
+  }
+  @include mq(desk) {
+    margin-right: 93px;
+  }
+}
+
+.footer__text {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $whiteColorPrimary;
+  font-weight: $fontWeightBold;
+
+  @include mq(tab) {
+    align-items: center;
+  }
+
+  @include mq(desk) {
+    display: block;
+  }
+}
+
+.footer-icons {
+  @extend %list;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 60px;
+
+  @include mq(tab) {
+    margin-bottom: 0;
+  }
+
+  @include mq(desk) {
+    margin-bottom: 0;
+  }
+}
+
+.footer-icons__link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  color: $whiteColorPrimary;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  transition: color 250ms $timingFunction, background-color 250ms $timingFunction;
+}
+
+.footer-icons__link {
+  &:hover,
+  &:focus {
+    background-color: $accentColor;
+    color: $whiteColorPrimary;
+  }
+}
+
+.footer-icons__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}

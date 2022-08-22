@@ -1,0 +1,98 @@
+.product__cards {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.product__list {
+  width: 450px;
+
+  @include mq(tab) {
+    width: 354px;
+  }
+
+  @include mq(desk) {
+    width: 370px;
+  }
+}
+
+.product__card {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.product__link {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  transition: box-shadow 250ms $timingFunction;
+}
+
+.product__link {
+  &:hover,
+  &:focus {
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.product__overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+  transform: translateY(100%);
+  transition: transform 250ms $timingFunction;
+}
+
+.product__list {
+  &:hover {
+    .product__overlay {
+      transform: translateY(0);
+    }
+  }
+}
+
+.product__textwrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 322px;
+  height: 168px;
+}
+
+.product__text {
+  margin-bottom: 0;
+  font-size: $fontSizeThird;
+  line-height: 1.56;
+  text-align: left;
+  color: $whiteColorPrimary;
+}
+
+.product-wrapper {
+  padding: 20px 24px;
+  border-left: 1px solid $colorBorder;
+  border-right: 1px solid $colorBorder;
+  border-bottom: 1px solid $colorBorder;
+
+  &__title {
+    margin-bottom: 4px;
+    font-size: $fontSizeThird;
+    line-height: 2;
+    color: $colorTextTitle;
+    letter-spacing: 0.06em;
+  }
+
+  &__text {
+    margin-bottom: 0;
+    color: $colorTextPrimary;
+    font-size: $fontFizeSecondary;
+    line-height: 1.88;
+  }
+}

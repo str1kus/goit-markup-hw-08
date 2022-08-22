@@ -1,0 +1,20 @@
+.logo {
+  font-weight: $fontWeightBold;
+  font-size: 24px;
+  font-family: $fontFamilySecondary;
+  line-height: calc(28 / 24);
+  color: $blackColorPrimary;
+  text-decoration: none;
+}
+
+.logo__dark {
+  color: $accentColor;
+}
+
+.page-header__logo {
+  margin-right: 88px;
+
+  @include mq(desk) {
+    margin-right: 91px;
+  }
+}

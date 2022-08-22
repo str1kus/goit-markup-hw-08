@@ -1,0 +1,87 @@
+%list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+body {
+  font-size: $fontSizePrimary;
+  color: $colorTextPrimary;
+  background-color: $whiteColorPrimary;
+  font-family: $fontFamilyPrimary;
+  letter-spacing: $letterSpacingPrimary;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+address {
+  font-style: normal;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+%current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: $accentColor;
+}
+
+%button {
+  padding: 0;
+  font-size: $fontFizeSecondary;
+  font-weight: $fontWeightBold;
+  color: $blackColorPrimary;
+  background-color: $whiteColorPrimary;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  letter-spacing: 0.06em;
+}
+
+%is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}

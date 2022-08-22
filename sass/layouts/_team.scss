@@ -1,0 +1,93 @@
+.section-team--background {
+  background-color: $colorSection;
+}
+
+.team {
+  @extend %list;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  @include mq(tab) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  @include mq(desk) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+
+.team__card {
+  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 0px 0px 4px 4px;
+}
+
+.team__textwrapper {
+  padding: 30px 0;
+  background-color: $whiteColorPrimary;
+}
+
+.team__title {
+  margin-bottom: 10px;
+  font-weight: $fontWeightMedium;
+  font-size: $fontFizeSecondary;
+  line-height: 1.19;
+  color: $colorTextTitle;
+  text-align: center;
+}
+
+.team__text {
+  margin-bottom: 16px;
+  font-size: $fontFizeSecondary;
+  line-height: 1.19;
+  text-align: center;
+}
+
+.team__icons {
+  @extend %list;
+  display: flex;
+  margin-left: 122px;
+  margin-right: 122px;
+  gap: 10px;
+
+  @include mq(tab) {
+    margin-left: 74px;
+    margin-right: 74px;
+  }
+  @include mq(desk) {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+.team__link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  color: inherit;
+  border-radius: 50%;
+  transition: color 250ms $timingFunction, background-color 250ms $timingFunction;
+}
+
+.team__icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.team__link {
+  &:hover,
+  &:focus {
+    color: $whiteColorPrimary;
+    background-color: $accentColor;
+  }
+}

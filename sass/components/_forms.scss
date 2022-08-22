@@ -1,0 +1,230 @@
+// ОСНОВНА ФОРМА
+
+.form {
+  text-align: left;
+}
+
+.form-primary {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__title {
+  font-size: 20px;
+  text-align: center;
+  font-weight: $fontWeightBold;
+  color: $colorTextTitle;
+  line-height: 1.15;
+}
+
+.form__title--position {
+  margin-bottom: 12px;
+}
+
+.form__field {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.form__field {
+  &:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  line-height: 1.16;
+}
+
+.form__input {
+  width: 100%;
+  height: 40px;
+  padding-left: 42px;
+  padding-right: 16px;
+  line-height: 1.16;
+  font-size: $fontFizeSecondary;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms $timingFunction;
+}
+
+.form__field:hover > .form__icons,
+.form__field:focus-within > .form__icons {
+  fill: $accentColor;
+}
+
+.form__input,
+.comment__field {
+  &:hover,
+  &:focus {
+    border-color: $accentColor;
+    outline: none;
+  }
+}
+
+.form__icons {
+  left: 12px;
+  bottom: 11px;
+  width: 18px;
+  height: 18px;
+  transition: fill 250ms $timingFunction;
+}
+
+.form__icons--position {
+  position: absolute;
+}
+
+.comment__field {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 16px;
+  resize: none;
+  line-height: 1.16;
+  font-size: $fontFizeSecondary;
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms $timingFunction;
+}
+
+.comment__field::placeholder {
+  font-size: 12px;
+  line-height: 1.16;
+  color: rgba(117, 117, 117, 0.5);
+  letter-spacing: 0.01em;
+}
+
+.checkbox {
+  margin-bottom: 30px;
+}
+
+.checkbox__input {
+  @extend %visually-hidden;
+}
+
+.checkbox__field {
+  display: inline-block;
+}
+
+.checkbox__field--position {
+  position: relative;
+}
+
+.checkbox__icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+}
+.checkbox__icon--position {
+  position: absolute;
+  left: 0px;
+  top: 2px;
+
+  @include mq(desk) {
+    left: 13px;
+    top: 4px;
+  }
+}
+
+.checkbox__icon--checkin {
+  fill: $accentColor;
+}
+
+.checkbox__input:checked + .checkbox__icons {
+  .checkbox__icon--checkin {
+    opacity: 1;
+  }
+}
+
+.checkbox__input:not(:checked) + .checkbox__icons {
+  .checkbox__icon--checkin {
+    opacity: 0;
+  }
+}
+
+.checkbox__label {
+  padding-left: 24px;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+
+  @include mq(desk) {
+    padding-left: 37px;
+    font-size: 14px;
+    line-height: calc(24 / 14);
+  }
+}
+
+.checkbox__text {
+  display: inline-block;
+  color: $accentColor;
+  font-size: 12px;
+  // line-height: 1;
+  text-underline-position: under;
+
+  @include mq(desk) {
+    font-size: 14px;
+    line-height: 1.46;
+  }
+}
+
+// ДОДАТКОВА ФОРМА
+
+.form-secondary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq(desk) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.form-secondary__field {
+  width: 300px;
+  height: 50px;
+  margin-bottom: 20px;
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: $fontFizeSecondary;
+  color: $whiteColorPrimary;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+  line-height: 1.07;
+  letter-spacing: 0.03em;
+  transition: box-shadow 250ms $timingFunction;
+
+  @include mq(mob) {
+    width: 450px;
+  }
+
+  @include mq(desk) {
+    width: 358px;
+    margin-bottom: 0;
+    margin-right: 12px;
+  }
+}
+
+.form-secondary__field {
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.form-secondary__field::placeholder {
+  font-size: $fontFamilySecondary;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+}

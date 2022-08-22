@@ -1,0 +1,91 @@
+.hero {
+  background-color: $bgColorHero;
+  overflow: hidden;
+}
+
+.hero__overlay {
+  max-width: 480px;
+  text-align: center;
+  padding: 118px 0;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/hero/image01-480w480.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include mq(tab) {
+    max-width: 768px;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/hero/image01-768w768.jpg');
+  }
+
+  @include mq(desk) {
+    max-width: 1600px;
+    padding: 200px 0;
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/hero/image01-1600w1600.jpg');
+  }
+}
+
+@media screen and (min-devie-pixel-ratio: 2),
+  screen and (min-resolution: 192dpi),
+  screen and (min-resolution: 2dppx) {
+  .hero__overlay {
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+      url('../images/hero/image01-480w480@2x.jpg'), url('../images/hero/image01-768w768@2x.jpg'),
+      url('../images/hero/image01-1600w1600@2x.jpg');
+  }
+}
+
+.hero__overlay--position {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero__title {
+  width: 300 px;
+  font-size: 26px;
+  line-height: calc(42 / 26);
+  font-weight: 900;
+  color: $whiteColorPrimary;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  @include mq(mob) {
+    width: 360px;
+    font-size: 26px;
+    line-height: calc(42 / 26);
+  }
+
+  @include mq(desk) {
+    width: 696px;
+    font-size: 44px;
+    line-height: calc(60 / 44);
+  }
+}
+
+.hero__title--position {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 30px;
+}
+
+.hero__button {
+  @extend %button;
+  width: 200px;
+  height: 50px;
+  line-height: 1.88;
+  color: $whiteColorPrimary;
+  background-color: $accentColor;
+  transition: background-color 250ms $timingFunction, box-shadow 250ms $timingFunction;
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+
+  @include mq(desk) {
+    width: 216px;
+  }
+}

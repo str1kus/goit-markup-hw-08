@@ -1,0 +1,121 @@
+// КНОПКА ГЕРОЯ
+
+.hero__button {
+  @extend %button;
+  width: 216px;
+  height: 50px;
+  line-height: 1.88;
+  color: $whiteColorPrimary;
+  background-color: $accentColor;
+  transition: background-color 250ms $timingFunction, box-shadow 250ms $timingFunction;
+
+  &:hover,
+  &:focus {
+    background-color: #188ce8;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+// КНОПКА ЗАКРИТТЯ
+
+.button__close {
+  width: 30px;
+  height: 30px;
+  color: $blackColorPrimary;
+  background-color: $whiteColorPrimary;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  transition: color 250ms $timingFunction;
+}
+
+.button__close--position {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.button__close {
+  .button__icon--cross {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+}
+
+.button__close {
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+}
+
+// КНОПКА ВІДПРАВКИ ФОРМИ
+
+.button__submit {
+  @extend %button;
+  display: block;
+  width: 200px;
+  height: 50px;
+  line-height: 1.88;
+  color: $whiteColorPrimary;
+  background-color: $accentColor;
+  transition: box-shadow 250ms $timingFunction;
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+.button__submit--modal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button__submit--order {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.button__submit--icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+// КНОПКА ЗАКРИТТЯ МОБІЛЬНОГО МЕНЮ
+
+.menu-toggle {
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: $colorTextTitle;
+  transition: color 250ms $timingFunction;
+  &:hover,
+  &:focus {
+    color: $accentColor;
+  }
+}
+
+.menu-toggle__icon-menu {
+  fill: currentColor;
+}
+
+.menu-toggle__icon-close {
+  fill: currentColor;
+}
+
+.menu-toggle__close--position {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
